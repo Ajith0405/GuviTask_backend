@@ -7,9 +7,15 @@ const ObjectId = require('mongodb');
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin:["https://guvi-task-frontend-amber.vercel.app"],
+        methods:["POST","GET","PUT"],
+        credentials:true
+    }
+))
 
-mongoose.connect("mongodb://127.0.0.1:27017/GuviTask");
+mongoose.connect("mongodb+srv://ajithshanmugam040597:wrgW5exe1YU2Dkvk@cluster0.r1o9qtd.mongodb.net/test?retryWrites=true&w=majority");
 
 app.post('/register', (req, res)=>{
     UsersModel.create(req.body)
