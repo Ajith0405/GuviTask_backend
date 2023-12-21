@@ -15,7 +15,7 @@ app.use(cors(
     }
 ))
 
-mongoose.connect("mongodb+srv://ajithshanmugam040597:wrgW5exe1YU2Dkvk@cluster0.r1o9qtd.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://ajithshanmugam040597:test123@test.rwzkngg.mongodb.net/test?retryWrites=true&w=majority");
 
 app.post('/register', (req, res)=>{
     UsersModel.create(req.body)
